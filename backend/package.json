@@ -15,11 +15,14 @@
   "license": "ISC",
   "devDependencies": {
     "@types/config": "^3.3.0",
+    "@types/mongodb": "^4.0.7",
     "nodemon": "^2.0.22",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "config": "^3.3.9"
+    "config": "^3.3.9",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.1"
   }
 }

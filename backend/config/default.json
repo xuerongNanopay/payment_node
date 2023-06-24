@@ -1,3 +1,5 @@
 {
-  "Title": "Hello"
+  "MONGO_DB": {
+    "URL": "mongodb://root:123456@localhost:27017/rest_demo?authSource=admin"
+  }
 }
