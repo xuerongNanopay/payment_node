@@ -1,0 +1,20 @@
+.formWidth {
+  width: 40%
+}
+
+@media (max-width: 768px) {
+  .formWidth {
+    width: 85%
+  }
+}
+.verifyCode {
+  & > input {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+  }
+}
+.buttonHoverColor:hover {
+  background-color: hsl(162 41% 90%) !important;
+  color: #1A6B54 !important;
+}

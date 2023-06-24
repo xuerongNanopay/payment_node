@@ -1,0 +1,62 @@
+.sendMoneyModalContainer {
+  --bs-modal-header-border-width: 0px !important;
+}
+
+.progressBarRefactor {
+  --bs-progress-height: 1px !important;
+}
+
+@media (min-width: 575.98px) {
+  .sendMoneyModalContainer > div{
+    --bs-modal-width: 570px !important;
+  }
+}
+
+.sendMoneyReviewTransfer {
+  --bs-card-spacer-y: 1.4rem !important;
+  --bs-card-spacer-x: 1.4rem !important;
+  margin: 1rem auto 0;
+  width: 85%;
+  border: 1px solid #d8dce8;
+  border-top: 6px solid #1A6B54;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.sendMoneyReviewDetail {
+  --bs-card-spacer-y: 1.4rem !important;
+  --bs-card-spacer-x: 1.4rem !important;
+  margin: 1rem auto 0;
+  width: 85%;
+  border: 1px solid #d8dce8;
+}
+
+@media (max-width: 575.98px) {
+  .sendMoneyReviewTransfer {
+    --bs-card-spacer-y: 0.4rem !important;
+    --bs-card-spacer-x: 0.4rem !important;
+    width: 100%;
+    margin: 0.4rem auto 0;
+  }
+  .sendMoneyReviewDetail {
+    --bs-card-spacer-y: 0.4rem !important;
+    --bs-card-spacer-x: 0.4rem !important;
+    width: 100%;
+    margin: 0.4rem auto 0;
+  }
+}
+/* .addAccountHint {
+  position: relative;
+
+}
+.addAccountHint:hover::after {
+  content: 'New Account';
+  position: absolute;
+  background-color: #8c8c8c;
+  color: #fff;
+  left: -69px;
+  top: 40px;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding: 0.2rem;
+} */
