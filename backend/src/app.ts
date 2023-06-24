@@ -1,6 +1,5 @@
 console.log('Payment App start....')
 
-import {UserInputData} from "models/user";
-
-const user: UserInputData = {email: 'xxx@qq.com', password: 'adminAB1'}
-console.log(user)
+// import runBoot from "boot";
+import runBoot from "./boot"
+let a = await runBoot();

@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": ".ts",
   "ignore": [],
-  "exec": "npx ts-node ./src/app.ts"
+  "exec": "nodemon -x node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm ./src/app.ts"
 }
