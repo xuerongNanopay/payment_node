@@ -1,3 +1,15 @@
 .progressBarRefactor {
   --bs-progress-height: 1px !important;
 }
+
+/* .addContactModalContainer label {
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 0.2rem !important;
+}
+
+.addContactModalContainer small {
+  font-size: 0.7rem;
+  font-style: normal;
+} */
