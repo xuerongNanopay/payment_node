@@ -2,7 +2,7 @@ import { Schema } from "mongoose";
 
 import { AddressData, DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
 
-export default interface BaseUser {
+export default interface IUser {
   type: string;
   _id: number;
   userName: string;
@@ -24,7 +24,7 @@ export default interface BaseUser {
   updateBy: number;
 }
 
-const baseUserSchema = new Schema<BaseUser>(
+const UserSchema = new Schema<IUser>(
   {
     type: {
       type: String,
