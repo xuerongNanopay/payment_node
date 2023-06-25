@@ -12,6 +12,18 @@
   }
 }
 
+.sendMoneyModalContainer label {
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 0.2rem !important;
+}
+
+.sendMoneyModalContainer small {
+  font-size: 0.7rem;
+  font-style: normal;
+}
+
 .sendMoneyReviewTransfer {
   --bs-card-spacer-y: 1.4rem !important;
   --bs-card-spacer-x: 1.4rem !important;

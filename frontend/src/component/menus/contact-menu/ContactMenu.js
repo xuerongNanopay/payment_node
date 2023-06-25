@@ -1,9 +1,11 @@
 import { Button } from 'react-bootstrap';
 
 import css from './ContactMenu.module.css'
-import { AddContactModal } from 'component/modals/AddContactModal'
+import useAddContactModal from 'component/modals/AddContactModal';
 
 const ContactMenu = _ => {
+  const [ handleShow, Modal ] = useAddContactModal();
+
   return (
     <>
       <div className={`${css.contactMenuContainer}`}>
@@ -14,8 +16,8 @@ const ContactMenu = _ => {
             justifyContent: 'end'
           }}
         >
-          <Button>Add Contact</Button>
-          <AddContactModal/>
+          <Button onClick={handleShow}>Add Contact</Button>
+          {Modal}
         </div>
       </div>
     </>

@@ -125,25 +125,46 @@ const AddPKBankAccount = () => {
   )
 }
 
-export const AddContactModal = () => {
-  const [isFirst, setIsFirst] = useState(true);
+function addContactReducer(state, action) {
+  switch ( action.type ) {
+    case 'cleanState':
+      return Initial_State;
+    default:
+      return state;
+  }
+}
 
+const Initial_State = {
+
+}
+
+export const AddContactModal = ({show, handleClose}) => {
+  const [isFirst, setIsFirst] = useState(true);
+  const [state, dispatch] = useReducer(addContactReducer, {...Initial_State});
+
+  const closeModal = _ => {
+    setIsFirst(true);
+    dispatch({type: 'cleanState'});
+    handleClose();
+    //TODO: navigate
+  }
   return (
     <>
       <Modal
-        show={true}
+        show={show}
+        onHide={closeModal} 
         centered
         backdrop='static'
         fullscreen='sm-down'
         size='lg'
       >
         <div className={`${css.addContactModalContainer}`}>
-          <Modal.Header centered closeButton>
-            <img style={{justifyItems: 'center'}} src={nbp_logo}/>
-            {/* <Modal.Title>New Account</Modal.Title> */}
+          <Modal.Header closeButton>
+            {/* <img style={{justifyItems: 'center'}} src={nbp_logo}/> */}
+            <Modal.Title>New Account</Modal.Title>
           </Modal.Header>
-          <ProgressBar className={`${css.progressBarRefactor}`} min={0} max={2} now={1} />
-          <Modal.Body style={{height: '75vh', overflowY: 'scroll'}}>
+          <ProgressBar className={`${css.progressBarRefactor}`} min={0} max={2} now={isFirst ? 1 : 2} />
+          <Modal.Body style={{height: '72vh', overflowY: 'scroll'}}>
             { isFirst ? <CreateContact/> : <AddPKBankAccount/>}
           </Modal.Body>
           <Modal.Footer>
@@ -156,3 +177,16 @@ export const AddContactModal = () => {
     </>
   )
 }
+
+const useAddContactModal = _ => {
+  const [show, setShow] = useState(false);
+  const handleClose = (e) => setShow(false); 
+  const handleShow = (e) => setShow(true);
+
+  const Modal = <AddContactModal show={show} handleClose={handleClose}/>;
+  return [
+    handleShow,
+    Modal
+  ]
+}
+export default useAddContactModal;

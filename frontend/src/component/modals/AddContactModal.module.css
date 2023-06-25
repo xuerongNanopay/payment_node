@@ -2,7 +2,7 @@
   --bs-progress-height: 1px !important;
 }
 
-/* .addContactModalContainer label {
+.addContactModalContainer label {
   font-size: 0.9rem;
   font-style: normal;
   font-weight: 600;
@@ -12,4 +12,4 @@
 .addContactModalContainer small {
   font-size: 0.7rem;
   font-style: normal;
-} */
+}
