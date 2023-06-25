@@ -9,16 +9,20 @@ const ContactMenu = _ => {
   return (
     <>
       <div className={`${css.contactMenuContainer}`}>
-        <h2>Contacts</h2>
-        <div
+        <header
           style={{
             display: 'flex',
-            justifyContent: 'end'
+            justifyContent: 'space-between',
+            alignContent: 'center',
+            marginTop: '1rem'
           }}
         >
-          <Button onClick={handleShow}>Add Contact</Button>
-          {Modal}
-        </div>
+          <h1>Contacts</h1>
+          <div>
+            <Button onClick={handleShow}>Add Contact</Button>
+            {Modal}
+          </div>
+        </header>
       </div>
     </>
   )
