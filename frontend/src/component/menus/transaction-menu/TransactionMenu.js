@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { MaterialReactTable } from 'material-react-table';
-import { Box, Button, ListItemIcon, MenuItem, Typography } from '@mui/material';
-
+import { Box } from '@mui/material';
+import { Button } from 'react-bootstrap';
+import { useSendMoneyModal } from 'component/modals/SendMoneyModal';
 
 import css from './TransactionMenu.module.css'
 
@@ -17,6 +18,7 @@ const ExampleData = Array(50).fill(null).map(_ => (
 ));
 
 const TransactionMenu = _ => {
+  const [sendMoneyModalShow, Modal] = useSendMoneyModal();
   const navigate = useNavigate();
   const columns = useMemo(
     () => [
@@ -90,6 +92,17 @@ const TransactionMenu = _ => {
     <>
       <div className={`${css.transactionMenuContainer}`}>
         <h1>Transactions</h1>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'end'
+          }}
+        >
+          <Button
+            onClick={sendMoneyModalShow}
+          >Send Money</Button>
+          {Modal}
+        </div>
         <div className='mt-4'>
           <MaterialReactTable 
             columns={columns}
