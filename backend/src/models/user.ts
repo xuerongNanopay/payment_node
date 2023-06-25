@@ -1,6 +1,8 @@
-import { DateData, LegalName } from "./basic-type";
+import { Schema } from "mongoose";
 
-interface BaseUser {
+import { DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
+
+export default interface BaseUser {
   type: string;
   _id: number;
   userName: string;
@@ -21,3 +23,32 @@ interface BaseUser {
   createBy: number;
   updateBy: number;
 }
+
+const baseUserSchema = new Schema<BaseUser>(
+  {
+    type: {
+      type: String,
+      required: true
+    },
+    userName: {
+      type: String,
+      require: true
+    },
+    email: {
+      type: String,
+      require: true
+    },
+    legalName: {
+      type: LegalNameSchema,
+      require: true
+    },
+    birthDay: {
+      type: DateDataSchema,
+      require: true
+    },
+    emailVerified: {
+      type: Boolean,
+      default: false
+    }
+  }
+);
