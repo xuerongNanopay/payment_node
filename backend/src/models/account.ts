@@ -1,24 +1,24 @@
 import { AddressData } from "./basic-type";
 
-export interface IAccount<ID, OWER_ID> {
+export interface IAccount<ID, USER_ID> {
   type: string;
   id: ID,
   name: string;
   domination: string;
   description?: string;
   isDefault?: boolean;
-  owner: OWER_ID;
+  owner: USER_ID;
   lifeCycleState: string;
   transferIn: boolean;
   transferOut: boolean;
 
   createdAt: Date;
   updatedAt: Date;
-  createBy: OWER_ID;
-  updateBy: OWER_ID;
+  createBy: USER_ID;
+  updateBy: USER_ID;
 }
 
-export interface IBankAcount<ID, OWER_ID> extends IAccount<ID, OWER_ID> {
+export interface IBankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {
   accountNumber?: string;
   iban?: string;
   institutionNumber: string;
@@ -32,5 +32,5 @@ export interface IBankAcount<ID, OWER_ID> extends IAccount<ID, OWER_ID> {
   verifyBy: any; // Plaid or Flinks or void check
 }
 
-export interface ICABankAcount<ID, OWER_ID> extends IAccount<ID, OWER_ID> {}
-export interface IPKBankAcount<ID, OWER_ID> extends IAccount<ID, OWER_ID> {}
+export interface ICABankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {}
+export interface IPKBankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {}
