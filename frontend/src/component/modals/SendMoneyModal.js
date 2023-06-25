@@ -11,6 +11,7 @@ import Modal from 'react-bootstrap/Modal';
 import InputGroup from 'react-bootstrap/InputGroup'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Card from 'react-bootstrap/Card';
+import nbp_logo from 'image/nbp_foree_remittance_logo.svg'
 
 import css from './SendMoneyModal.module.css'
 
