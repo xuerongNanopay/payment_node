@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-import { DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
+import { AddressData, DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
 
 export default interface BaseUser {
   type: string;
@@ -14,7 +14,7 @@ export default interface BaseUser {
   isOnboard: boolean;
   loginEnable: boolean;
   lastLogin: Date;
-  address: string;
+  address: AddressData;
   phoneNumber: string;
   avatarUrl?: string;
 
@@ -48,7 +48,14 @@ const baseUserSchema = new Schema<BaseUser>(
     },
     emailVerified: {
       type: Boolean,
+      required: true,
       default: false
-    }
+    },
+    isOnboard: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    
   }
 );

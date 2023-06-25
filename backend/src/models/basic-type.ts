@@ -13,7 +13,12 @@ export interface DateData {
 }
 
 export interface AddressData {
-  
+  address1: string;
+  address2?: string;
+  city: string;
+  region: string;
+  country: string;
+  postCode: string;
 }
 
 export enum Currency {
@@ -55,6 +60,16 @@ export const DateDataSchema = new Schema<DateData> (
     day: {
       type: Number,
       required: true,
+      trim: true
+    }
+  }
+)
+
+export const AddressDataSchema = new Schema<AddressData> (
+  {
+    address1: {
+      type: String,
+      require: true,
       trim: true
     }
   }
