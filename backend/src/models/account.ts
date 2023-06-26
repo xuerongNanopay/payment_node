@@ -30,6 +30,7 @@ export interface IBankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {
   status: string;
   verificationAttempts: string;
   verifyBy: any; // Plaid or Flinks or void check
+  //TODO: transaction?
 }
 
 export interface ICABankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {}

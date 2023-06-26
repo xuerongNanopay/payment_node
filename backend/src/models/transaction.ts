@@ -2,6 +2,7 @@ export interface IFee {
   name: string;
   amount: number;
   currency: string;
+  description?: string;
 }
 
 export interface ITransfer<F, T> {

@@ -21,7 +21,7 @@ const testInputUser = async () => {
   })
   
   user = await user.save();
-  console.log(user._doc._id.toString(), user._doc)
+  console.log(user._doc._id.toString(), user._doc, user.createdAt.toISOString())
 }
 
 export default testInputUser;

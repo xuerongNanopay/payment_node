@@ -29,9 +29,12 @@ export interface IUser extends DocumentResult<IUser> {
   phoneNumber: string;
   role: ROLES;
   avatarUrl?: string;
+  //TODO: change with correct type.
+  accounts: any[];
+  contacts: any[];
 
-  createAt: Date;
-  updateAt: Date;
+  createdAt: Date;
+  updatedAt: Date;
   // createBy: number;
   // updateBy: number;
 }
@@ -101,6 +104,9 @@ const UserSchema = new Schema<IUser>(
       default: 'USER'
     }
     
+  },
+  {
+    timestamps: true
   }
 );
 

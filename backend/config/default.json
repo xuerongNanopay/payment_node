@@ -4,5 +4,20 @@
   },
   "SERVER": {
     "PORT": 3030
+  },
+  "NBP": {
+    "URL": "",
+    "AGENCY_CODE": -1,
+    "USERNAME": "",
+    "PASSOWORD": ""
+  },
+  "FLINKS": {
+
+  },
+  "SCOTIAL": {
+
+  },
+  "PLAID": {
+
   }
 }
