@@ -4,7 +4,7 @@ import User, { IUser } from "./user";
 import BankAccount, { IBankAccount } from "./account";
 
 const testInputUser = async () => {
-  let user = new User<Partial<IUser>>({
+  let user = new User({
     userName: 'miumiu',
     email: 'miumiu@xrw.io',
     password: 'bcryptjs',
@@ -22,8 +22,22 @@ const testInputUser = async () => {
   })
   
   user = await user.save();
-  console.log(user._doc._id.toString(), user._doc, user.createdAt.toISOString())
-  let bankAccount = new BankAccount
+  // console.log(user._doc._id.toString(), user._doc, user.createdAt.toISOString(), user._id)
+  let bankAccount = new BankAccount({
+    name: 'new CA bankAccount',
+    owner: user,
+    transferIn: true,
+    iban: 'aaaa'
+  })
+  bankAccount = await bankAccount.save();
+  const rebankAccount = await BankAccount
+                                .findOne({_id: bankAccount._id.toString()})
+                                .populate({
+                                  path: 'owner',
+                                  select: '_id userName email'
+                                });
+
+  console.log(rebankAccount)
 }
 
 export default testInputUser;

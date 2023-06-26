@@ -11,7 +11,7 @@ import { IUser } from "./user";
 
 export interface IAccount {
   type: string;
-  _id: Types.ObjectId,
+  _id: Types.ObjectId;
   name?: string;
   domination: string;
   description?: string;
@@ -67,7 +67,8 @@ const BankAccountSchema = new Schema<IBankAccount>(
     },
     owner: {
       type: Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
+      require: true
     },
     lifeCycleState: {
       type: String,
