@@ -1,11 +1,19 @@
 import { Schema, model } from "mongoose";
 
-import { AddressData, AddressDataSchema, DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
+import { 
+  AddressData, 
+  AddressDataSchema, 
+  DateData, 
+  DateDataSchema, 
+  DocumentResult, 
+  LegalName, 
+  LegalNameSchema 
+} from "./basic-type";
 
 type ROLES = "USER" | "BACK_OP" | "ADMIN";
 const ROLES_MONGOOSE_ENUM = ["USER", "BACK_OP", "ADMIN"];
 
-export interface IUser {
+export interface IUser extends DocumentResult<IUser> {
   // type: string;
   _id: number;
   userName: string;

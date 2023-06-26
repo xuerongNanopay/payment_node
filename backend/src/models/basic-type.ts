@@ -1,5 +1,9 @@
 import { Schema } from "mongoose";
 
+export interface DocumentResult<T> {
+  _doc: T;
+}
+
 export interface LegalName {
   firstName: string;
   middleName?: string;
