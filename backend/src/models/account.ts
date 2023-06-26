@@ -53,36 +53,40 @@ const BankAccountSchema = new Schema<IBankAccount>(
     },
     name: {
       type: String,
-      require: false,
+      required: false,
     },
     domination: {
       type: String,
-      require: true,
+      required: true,
       default: 'CAD'
     },
     description: {
       type: String,
-      require: false,
+      required: false,
       default: 'CAD'
     },
     owner: {
       type: Types.ObjectId,
       ref: 'User',
-      require: true
+      required: true
+    },
+    country: {
+      type: String,
+      required: true
     },
     lifeCycleState: {
       type: String,
-      require: true,
+      required: true,
       default: 'NEW'
     },
     transferIn: {
       type: Boolean,
-      require: true,
+      required: true,
       default: false
     },
     transferOut: {
       type: Boolean,
-      require: true,
+      required: true,
       default: false
     }
   },

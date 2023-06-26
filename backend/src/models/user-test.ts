@@ -27,7 +27,8 @@ const testInputUser = async () => {
     name: 'new CA bankAccount',
     owner: user,
     transferIn: true,
-    iban: 'aaaa'
+    iban: 'aaaa',
+    country: 'CA'
   })
   bankAccount = await bankAccount.save();
   const rebankAccount = await BankAccount
