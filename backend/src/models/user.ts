@@ -103,6 +103,7 @@ const UserSchema = new Schema<IUser>(
       enum: ROLES_MONGOOSE_ENUM,
       default: 'USER'
     },
+    //TODO: breakdown to subclass
     accounts: [
       {
         type: Schema.Types.ObjectId,
