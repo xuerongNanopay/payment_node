@@ -1,9 +1,12 @@
 import { Schema } from "mongoose";
 
-import { AddressData, DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
+import { AddressData, AddressDataSchema, DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
+
+type ROLES = "USER" | "BACK_OP" | "ADMIN";
+const ROLES_MONGOOSE_ENUM = ["USER", "BACK_OP", "ADMIN"];
 
 export default interface IUser {
-  type: string;
+  // type: string;
   _id: number;
   userName: string;
   email: string;
@@ -12,29 +15,34 @@ export default interface IUser {
   birthDay?: DateData;
   emailVerified: boolean;
   isOnboard: boolean;
-  loginEnable: boolean;
-  lastLogin: Date;
+  loginEnable?: boolean;
+  lastLogin?: Date;
   address: AddressData;
   phoneNumber: string;
+  role: ROLES;
   avatarUrl?: string;
 
   createAt: Date;
   updateAt: Date;
-  createBy: number;
-  updateBy: number;
+  // createBy: number;
+  // updateBy: number;
 }
 
 const UserSchema = new Schema<IUser>(
   {
-    type: {
-      type: String,
-      required: true
-    },
+    // type: {
+    //   type: String,
+    //   required: true
+    // },
     userName: {
       type: String,
       require: true
     },
     email: {
+      type: String,
+      require: true
+    },
+    password: {
       type: String,
       require: true
     },
@@ -44,6 +52,10 @@ const UserSchema = new Schema<IUser>(
     },
     birthDay: {
       type: DateDataSchema,
+      require: false
+    },
+    address: {
+      type: AddressDataSchema,
       require: true
     },
     emailVerified: {
@@ -56,6 +68,20 @@ const UserSchema = new Schema<IUser>(
       required: true,
       default: false
     },
+    phoneNumber: {
+      type: String,
+      required: false
+    },
+    avatarUrl: {
+      type: String,
+      required: false
+    },
+    role: {
+      type: String,
+      required: true,
+      enum: ROLES_MONGOOSE_ENUM,
+      default: 'USER'
+    }
     
   }
 );
