@@ -3,6 +3,9 @@ import winston, {format} from "winston";
 const logger = winston.createLogger({
   transports: [
     new winston.transports.Console({
+      format: format.combine(
+        winston.format.json()
+      )
       // format: format.combine(
       //   format.colorize({
       //     all:true
