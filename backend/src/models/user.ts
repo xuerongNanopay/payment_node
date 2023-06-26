@@ -30,8 +30,8 @@ export interface IUser extends DocumentResult<IUser> {
   role: ROLES;
   avatarUrl?: string;
   //TODO: change with correct type.
-  accounts: any[];
-  contacts: any[];
+  accounts: Schema.Types.ObjectId[];
+  contacts: Schema.Types.ObjectId[];
 
   createdAt: Date;
   updatedAt: Date;
@@ -102,7 +102,20 @@ const UserSchema = new Schema<IUser>(
       required: true,
       enum: ROLES_MONGOOSE_ENUM,
       default: 'USER'
-    }
+    },
+    accounts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Account'
+        // refPath: 'accountModel'
+      }
+    ],
+    contacts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Contact'
+      }
+    ]
     
   },
   {
@@ -110,5 +123,5 @@ const UserSchema = new Schema<IUser>(
   }
 );
 
-const User = model<IUser>('User', UserSchema);
+const User = model<IUser>('User', UserSchema, 'users');
 export default User;
