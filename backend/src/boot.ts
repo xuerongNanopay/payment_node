@@ -2,7 +2,7 @@
 import config from 'config';
 import mongoose from 'mongoose';
 import testInputUser from './models/user-test'
-import logger from './utils/logger';
+import logger from '@utils/logger';
 
 const bootMongoose = async () => {
   try {

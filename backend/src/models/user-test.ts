@@ -2,6 +2,7 @@
 
 import User, { IUser } from "./user";
 import BankAccount, { IBankAccount } from "./account";
+import logger from "@utils/logger";
 
 const testInputUser = async () => {
   let user = new User({
@@ -41,7 +42,7 @@ const testInputUser = async () => {
 
   console.log(rebankAccount);
   user.account.bankAccounts.push(bankAccount);
-  await user.save();
+  let ret = await user.save();
 }
 
 export default testInputUser;
