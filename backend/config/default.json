@@ -1,5 +1,8 @@
 {
   "MONGO_DB": {
     "URL": "mongodb://root:123456@localhost:27017/payment?authSource=admin"
+  },
+  "SERVER": {
+    "PORT": 3030
   }
 }
