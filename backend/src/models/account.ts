@@ -49,7 +49,8 @@ const BankAccountSchema = new Schema<IBankAccount>(
     type: {
       type: String,
       immutable: true,
-      default: 'CABankAccount'
+      enum: ['CABankAccount', 'PKBankAccount', 'USBankAccount'],
+      required: true
     },
     name: {
       type: String,
@@ -88,12 +89,17 @@ const BankAccountSchema = new Schema<IBankAccount>(
       type: Boolean,
       required: true,
       default: false
-    }
+    },
+    accountNumber: String,
+    iban: String,
+    institutionNumber: String,
+    branchId: String
   },
   {
     timestamps: true
   }
 )
+
 
 const BankAccount = model<IBankAccount>('BankAccount', BankAccountSchema, 'bankacounts');
 export default BankAccount;
