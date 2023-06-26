@@ -9,9 +9,9 @@ import {
 import { AddressData } from "./basic-type";
 import { IUser } from "./user";
 
-export interface IAccount<ID, USER_ID> {
+export interface IAccount {
   type: string;
-  _id: ID,
+  _id: Types.ObjectId,
   name?: string;
   domination: string;
   description?: string;
@@ -23,11 +23,11 @@ export interface IAccount<ID, USER_ID> {
 
   createdAt: Date;
   updatedAt: Date;
-  createBy?: USER_ID;
-  updateBy?: USER_ID;
+  createBy?: Types.ObjectId;
+  updateBy?: Types.ObjectId;
 }
 
-export interface IBankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {
+export interface IBankAccount extends IAccount {
   accountNumber?: string;
   iban?: string;
   institutionNumber: string;
@@ -42,12 +42,9 @@ export interface IBankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {
   //TODO: transaction?
 }
 
-export interface ICABankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {}
-export interface IPKBankAcount<ID, USER_ID> extends IAccount<ID, USER_ID> {}
-
 //TODO: pre.save
 
-const BankAccountSchema = new Schema<IBankAcount<Types.ObjectId, Types.ObjectId>>(
+const BankAccountSchema = new Schema<IBankAccount>(
   {
     type: {
       type: String,
@@ -93,4 +90,5 @@ const BankAccountSchema = new Schema<IBankAcount<Types.ObjectId, Types.ObjectId>
   }
 )
 
-const User = model<IBankAcount<Types.ObjectId, Types.ObjectId>>('BankAccount', BankAccountSchema, 'bankacounts');
+const BankAccount = model<IBankAccount>('BankAccount', BankAccountSchema, 'bankacounts');
+export default BankAccount;

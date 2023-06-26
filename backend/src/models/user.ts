@@ -14,7 +14,7 @@ import {
   DocumentResult, 
   LegalName
 } from "./basic-type";
-import { IBankAcount } from "./account";
+import { IBankAccount } from "./account";
 
 type ROLES = "USER" | "BACK_OP" | "ADMIN";
 const ROLES_MONGOOSE_ENUM = ["USER", "BACK_OP", "ADMIN"];
@@ -37,7 +37,7 @@ export interface IUser extends DocumentResult<IUser> {
   avatarUrl?: string;
   //TODO: change with correct type.
   // digitalAccounts: (any)[];
-  bankAccounts: PopulatedDoc<IBankAcount<Types.ObjectId, Types.ObjectId>&Document>[];
+  bankAccounts: PopulatedDoc<IBankAccount&Document>[];
   nbpContacts: Types.ObjectId[];
 
   createdAt: Date;
