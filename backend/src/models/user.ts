@@ -37,7 +37,10 @@ export interface IUser extends DocumentResult<IUser> {
   avatarUrl?: string;
   //TODO: change with correct type.
   // digitalAccounts: (any)[];
-  bankAccounts: PopulatedDoc<IBankAccount&Document>[];
+  account: {
+    //Digital account
+    bankAccounts: PopulatedDoc<IBankAccount&Document>[];
+  },
   nbpContacts: Types.ObjectId[];
 
   createdAt: Date;
@@ -104,6 +107,14 @@ const UserSchema = new Schema<IUser>(
       type: String,
       required: false
     },
+    account: {
+      bankAccounts: [
+        {
+          type: Types.ObjectId,
+          ref: 'BankAccount'
+        }
+      ],
+    },
     role: {
       type: String,
       required: true,
@@ -111,12 +122,6 @@ const UserSchema = new Schema<IUser>(
       default: 'USER'
     },
     //TODO: breakdown to subclass
-    bankAccounts: [
-      {
-        type: Types.ObjectId,
-        ref: 'BankAccount'
-      }
-    ],
     nbpContacts: [
       {
         type: Types.ObjectId,

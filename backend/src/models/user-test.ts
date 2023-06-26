@@ -38,7 +38,9 @@ const testInputUser = async () => {
                                   select: '_id userName email'
                                 });
 
-  console.log(rebankAccount)
+  console.log(rebankAccount);
+  user.account.bankAccounts.push(bankAccount);
+  await user.save();
 }
 
 export default testInputUser;
