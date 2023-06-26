@@ -30,8 +30,9 @@ export interface IUser extends DocumentResult<IUser> {
   role: ROLES;
   avatarUrl?: string;
   //TODO: change with correct type.
-  accounts: Schema.Types.ObjectId[];
-  contacts: Schema.Types.ObjectId[];
+  digitalAccounts: Schema.Types.ObjectId[];
+  bankAccounts: Schema.Types.ObjectId[];
+  nbpContacts: Schema.Types.ObjectId[];
 
   createdAt: Date;
   updatedAt: Date;
@@ -104,14 +105,19 @@ const UserSchema = new Schema<IUser>(
       default: 'USER'
     },
     //TODO: breakdown to subclass
-    accounts: [
+    digitalAccounts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Account'
-        // refPath: 'accountModel'
+        ref: 'DigitalAccount'
       }
     ],
-    contacts: [
+    bankAccounts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'BankAccount'
+      }
+    ],
+    nbpContacts: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Contact'
