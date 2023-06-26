@@ -1,15 +1,21 @@
 console.log('Payment App start....')
 
-// import runBoot from "boot";
+// Iniitial Prerequisites.
 import runBoot from "./boot"
-import config from 'config';
-
 await runBoot();
 
+import config from 'config';
 import express, { ErrorRequestHandler } from "express";
-import { BodyParser } from "body-parser";
+import bodyParser from "body-parser";
+
+import authRouter from "./routers/auth";
 
 const httpServer = express();
+
+// Using json as http payload
+httpServer.use(bodyParser.json());
+
+httpServer.use('/auth', authRouter);
 
 // Default error handling
 const errorHandler: ErrorRequestHandler = (err, req, resp, next) => {
