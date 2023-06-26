@@ -1,11 +1,11 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 import { AddressData, AddressDataSchema, DateData, DateDataSchema, LegalName, LegalNameSchema } from "./basic-type";
 
 type ROLES = "USER" | "BACK_OP" | "ADMIN";
 const ROLES_MONGOOSE_ENUM = ["USER", "BACK_OP", "ADMIN"];
 
-export default interface IUser {
+export interface IUser {
   // type: string;
   _id: number;
   userName: string;
@@ -47,8 +47,18 @@ const UserSchema = new Schema<IUser>(
       require: true
     },
     legalName: {
-      type: LegalNameSchema,
-      require: true
+      firstName: {
+        type: String,
+        require: true
+      },
+      middleName: {
+        type: String,
+        require: false
+      },
+      lastName: {
+        type: String,
+        require: true
+      }
     },
     birthDay: {
       type: DateDataSchema,
@@ -85,3 +95,6 @@ const UserSchema = new Schema<IUser>(
     
   }
 );
+
+const User = model<IUser>('User', UserSchema);
+export default User;

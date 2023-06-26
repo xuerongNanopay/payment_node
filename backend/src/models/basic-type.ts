@@ -71,6 +71,26 @@ export const AddressDataSchema = new Schema<AddressData> (
       type: String,
       require: true,
       trim: true
+    },
+    address2: {
+      type: String,
+      require: false,
+      trim: true
+    },
+    city: {
+      type: String,
+      require: true,
+      trim: true
+    },
+    region: {
+      type: String,
+      require: true,
+      trim: true
+    },
+    postCode: {
+      type: String,
+      require: true,
+      trim: true
     }
   }
 )

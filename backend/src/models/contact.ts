@@ -16,8 +16,9 @@ export interface IContact {
   phoneNumber?: string; 
 }
 
-export interface IPKCashContact extends IContact {
+export interface IPKContact extends IContact {
   remittanceMethod: RemittanceContactType;
+  verified: boolean;
   bankName: string;
   iban: string;
   accountNumber: string;
