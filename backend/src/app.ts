@@ -4,13 +4,25 @@ console.log('Payment App start....')
 import runBoot from "./boot"
 import config from 'config';
 
-let a = await runBoot();
+await runBoot();
 
-import express from "express";
+import express, { ErrorRequestHandler } from "express";
 import { BodyParser } from "body-parser";
 
 const httpServer = express();
 
+// Default error handling
+const errorHandler: ErrorRequestHandler = (err, req, resp, next) => {
+  console.log(err);
+  resp
+    .status(err.statusCode || 500)
+    .json({
+      message: err.message || 'Internal Erro',
+    });
+}
+httpServer.use(errorHandler);
+
+//
 const httpPort = config.get('SERVER.PORT') as number | 3030;
 httpServer.listen(httpPort, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${httpPort}`);
