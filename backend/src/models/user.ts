@@ -1,4 +1,10 @@
-import { Schema, model } from "mongoose";
+import { 
+  PopulatedDoc, 
+  Schema, 
+  model, 
+  Document, 
+  Types 
+} from "mongoose";
 
 import { 
   AddressData, 
@@ -6,9 +12,9 @@ import {
   DateData, 
   DateDataSchema, 
   DocumentResult, 
-  LegalName, 
-  LegalNameSchema 
+  LegalName
 } from "./basic-type";
+import { IBankAcount } from "./account";
 
 type ROLES = "USER" | "BACK_OP" | "ADMIN";
 const ROLES_MONGOOSE_ENUM = ["USER", "BACK_OP", "ADMIN"];
@@ -30,14 +36,14 @@ export interface IUser extends DocumentResult<IUser> {
   role: ROLES;
   avatarUrl?: string;
   //TODO: change with correct type.
-  digitalAccounts: Schema.Types.ObjectId[];
-  bankAccounts: Schema.Types.ObjectId[];
-  nbpContacts: Schema.Types.ObjectId[];
+  // digitalAccounts: (any)[];
+  bankAccounts: PopulatedDoc<IBankAcount<Types.ObjectId, Types.ObjectId>&Document>[];
+  nbpContacts: Types.ObjectId[];
 
   createdAt: Date;
   updatedAt: Date;
-  // createBy: number;
-  // updateBy: number;
+  createBy?: number;
+  updateBy?: number;
 }
 
 const UserSchema = new Schema<IUser>(
@@ -105,21 +111,15 @@ const UserSchema = new Schema<IUser>(
       default: 'USER'
     },
     //TODO: breakdown to subclass
-    digitalAccounts: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'DigitalAccount'
-      }
-    ],
     bankAccounts: [
       {
-        type: Schema.Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'BankAccount'
       }
     ],
     nbpContacts: [
       {
-        type: Schema.Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'Contact'
       }
     ]
