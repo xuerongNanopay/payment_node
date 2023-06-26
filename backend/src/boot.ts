@@ -8,7 +8,7 @@ const bootMongoose = async () => {
   try {
     const url = config.get("MONGO_DB.URL") as string;
     mongoose.connect(url);
-    logger.info("Mongoose Initial Successfully!");
+    logger.error("Mongoose Initial Successfully!");
     await testInputUser();
   } catch ( error ) {
     throw error;
