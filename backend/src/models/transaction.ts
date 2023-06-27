@@ -5,6 +5,7 @@ import {
   Document, 
   Types 
 } from "mongoose";
+import { IUser } from "./user";
 
 
 export interface IFee {
@@ -16,7 +17,7 @@ export interface IFee {
 }
 
 export interface ITransfer<F, T> {
-  _id: string; // using transactions._id.toString + _ + autoIncrement
+  _id: string; // using transactions._id.toString + _ + autoIncrement & also can support order.
   type: string;
   from: F,
   to: T,
@@ -27,17 +28,20 @@ export interface ITransfer<F, T> {
   status: string;
   description?: string;
   notes?: string;
-  fees: IFee[] | null
+  fees: IFee[] | null,
+
+  owner: PopulatedDoc<IUser&Document>;
+  belong: PopulatedDoc<ITransaction&Document>;
 
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ITransaction<S_ID, D_ID> {
+export interface ITransaction {
   _id: Types.ObjectId;
   type: string;
-  source: S_ID;
-  destination: D_ID;
+  source: Types.ObjectId;
+  destination: Types.ObjectId;
   sourceAmount: number;
   destinationAmount: number;
   sourceCurrency: string;
@@ -46,6 +50,7 @@ export interface ITransaction<S_ID, D_ID> {
   transfers: ITransfer<any, any>[];
   totalExpense: number;
   totalFee: number; // grab data from transfer.
+  owner: PopulatedDoc<IUser&Document>;
 
   createdAt: Date;
   updatedAt: Date;
