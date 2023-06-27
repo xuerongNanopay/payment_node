@@ -49,10 +49,11 @@ export interface ITransaction {
   destinationCurrency: string;
   status: string;
   internalStage: string;
-  // Need to difine stage train.
-  transferStage: {};
+  // Need to difine stage chain.
+  currentStatge: string;
+  transferStage: {}; //cash in -> api push.
   reverseTransferStage: {};
-  feeDetails: any[]
+  fees: any[],
   totalExpense: number;
   totalFee: number; // grab data from transfer.
   owner: PopulatedDoc<IUser&Document>;
