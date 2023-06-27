@@ -63,6 +63,3 @@ const InstitutionSchema = new Schema<IInstitution>(
 
 const Institution = model<IInstitution>('Institution', InstitutionSchema, 'institutions');
 export default Institution;
-export interface ExchangeRate {
-
-}
