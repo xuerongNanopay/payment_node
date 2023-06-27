@@ -1,0 +1,24 @@
+{
+  "ENV": "development",
+  "MONGO_DB": {
+    "URL": "mongodb://root:123456@localhost:27017/payment?authSource=admin"
+  },
+  "SERVER": {
+    "PORT": 3030
+  },
+  "NBP": {
+    "URL": "https://ermpushapitest.nbp.com.pk/ERMV2/api/v2",
+    "AGENCY_CODE": 225,
+    "USERNAME": "API_UAT_NPay",
+    "PASSOWORD": "Test@NanoPay2022"
+  },
+  "FLINKS": {
+
+  },
+  "SCOTIAL": {
+
+  },
+  "PLAID": {
+
+  }
+}
