@@ -37,6 +37,7 @@ export interface ITransfer<F, T> {
   updatedAt: Date;
 }
 
+//handler to handler transaction.
 export interface ITransaction {
   _id: Types.ObjectId;
   type: string;
@@ -47,12 +48,24 @@ export interface ITransaction {
   sourceCurrency: string;
   destinationCurrency: string;
   status: string;
-  transfers: ITransfer<any, any>[];
-  reverseTransfers: ITransfer<any, any>[];
+  internalStage: string;
+  // Need to difine stage train.
+  transferStage: {};
+  reverseTransferStage: {};
+  feeDetails: any[]
   totalExpense: number;
   totalFee: number; // grab data from transfer.
   owner: PopulatedDoc<IUser&Document>;
 
   createdAt: Date;
   updatedAt: Date;
+}
+
+export class PKTransactionProcessor {
+  static initTransaction() {
+
+  }
+  static onTransferUpdate(transferId: number) {
+
+  }
 }
