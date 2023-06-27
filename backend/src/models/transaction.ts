@@ -48,6 +48,7 @@ export interface ITransaction {
   destinationCurrency: string;
   status: string;
   transfers: ITransfer<any, any>[];
+  reverseTransfers: ITransfer<any, any>[];
   totalExpense: number;
   totalFee: number; // grab data from transfer.
   owner: PopulatedDoc<IUser&Document>;
