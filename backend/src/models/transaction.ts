@@ -50,7 +50,8 @@ export interface ITransaction {
   status: string;
   internalStage: string;
   // Need to difine stage chain.
-  currentStatge: string;
+  currentStage: string;
+  // Different transaction will have different stage.
   transferStage: {}; //cash in -> api push.
   reverseTransferStage: {};
   fees: any[],
