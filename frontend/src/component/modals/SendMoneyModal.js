@@ -15,12 +15,18 @@ import nbp_logo from 'image/nbp_foree_remittance_logo.svg'
 
 import css from './SendMoneyModal.module.css'
 
-const TransferDetails = ({state, dispatch}) => {
+const TransferDetails = ({state, dispatch, closeModal}) => {
+  const navigate = useNavigate();
+
   const addNewAccount = e => {
-    alert("TODO: addNewAccount");
+    navigate('/mainMenu/account');
+    dispatch({type: 'cleanState'});
+    closeModal()
   }
   const addNewContact = e => {
-    alert("TODO: addNewAccount");
+    navigate('/mainMenu/contact');
+    dispatch({type: 'cleanState'});
+    closeModal()
   }
   return (
     <>
@@ -218,7 +224,7 @@ const SendMoneyModal = ({show, handleClose, reload}) => {
 
   const [state, dispatch] = useReducer(sendMoneyReducer, {...Initial_State});
 
-  const flows = [<TransferDetails state={state} dispatch={dispatch}/>, <TransactionPurpose state={state} dispatch={dispatch}/>, <SendMoneyReview />];
+  const flows = [<TransferDetails state={state} dispatch={dispatch} closeModal={handleClose}/>, <TransactionPurpose state={state} dispatch={dispatch}/>, <SendMoneyReview />];
 
   const { step, steps, curIndex, goTo, isFirstStep, isLastStep, back, next } = useMultistepForm(flows);
 
