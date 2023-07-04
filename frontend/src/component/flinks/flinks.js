@@ -15,4 +15,7 @@ const FlinksIframe = _ => {
   )
 }
 
+const useFlinksModal = () => {
+  
+}
 export default FlinksIframe;
