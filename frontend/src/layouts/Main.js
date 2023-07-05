@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Outlet } from "react-router-dom";
@@ -13,6 +14,19 @@ import SideNav from 'components/ui/side_nav/SideNav';
 import nbp_logo from 'image/nbp_foree_remittance_logo.svg'
 
 const MOBILE_SIZE = 997;
+
+const createModelHook = _ => {
+  createPortal(
+    <div id="model-hook">
+      <div id="flinks" />
+      <div id="plaid" />
+      <div id="contact" />
+      <div id="bankAccount" />
+      <div id="transfer" />
+    </div>,
+    document.body
+  );
+}
 
 //TODO: userContext to store user data.
 const Main = () => {
@@ -70,6 +84,18 @@ const Main = () => {
 
   return (
     <div className={`${css.container}`}>
+      {
+        createPortal(
+          <div id="model-hook">
+            <div id="flinks" />
+            <div id="plaid" />
+            <div id="contact" />
+            <div id="bankAccount" />
+            <div id="transfer" />
+          </div>,
+          document.body
+        )
+      }
       <nav className={`${css.navbar} ${css.navbarFixedTop}`}>
         <div className={`${css.navBarInner}`}>
           <div className={`${css.navBarItems}`}>
