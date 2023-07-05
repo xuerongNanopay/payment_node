@@ -8,6 +8,13 @@ import VerifyEmail from 'pages/auth/VerifyEmail'
 import ForgetPassword from 'pages/auth/ForgetPassword'
 
 import MainMenu from 'layouts/Main'
+import DashboardMenu from 'pages/menus/dashboard-menu/DashboardMenu';
+import TransactionMenu from 'pages/menus/transaction-menu/TransactionMenu';
+import ContactMenu from 'pages/menus/contact-menu/ContactMenu';
+import NotificationMenu from 'pages/menus/notification-menu/NotificationMenu';
+import AccountMenu from 'pages/menus/account-menu/AccountMenu';
+import ChangepasswdMenu from 'pages/menus/changepasswd-menu/ChangepasswdMenu';
+import TransactionDetail from 'pages/menus/transaction-menu/TransactionDetail';
 
 const routes = [
   {
@@ -43,6 +50,19 @@ const routes = [
   {
     path: "main",
     element: <MainMenu />,
+    children: [
+      { index: true, element: <DashboardMenu/> },
+      { path: "contact", element: <ContactMenu/>},
+      { path: "notification", element: <NotificationMenu/>},
+      { path: "dashboard", element: <DashboardMenu/>},
+      { path: "account", element: <AccountMenu/>},
+      { path: "change-password", element: <ChangepasswdMenu/>},
+      { path: "transaction", children: [
+        { index: true, element: <TransactionMenu/>},
+        { path: ":transactionId", element: <TransactionDetail/>},
+        { path: "*", element: <TransactionDetail/>},
+      ]}
+    ]
   },
   {
     path: "*",
