@@ -16,6 +16,8 @@ import AccountMenu from 'pages/menus/account-menu/AccountMenu';
 import ChangepasswdMenu from 'pages/menus/changepasswd-menu/ChangepasswdMenu';
 import TransactionDetail from 'pages/menus/transaction-menu/TransactionDetail';
 
+import AuthGuard from 'guards/AuthGuard';
+
 const routes = [
   {
     path: "auth",
