@@ -1,7 +1,6 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
-import axios from "../utils/axios";
-import { isValidToken, setSession } from "../utils/jwt";
+import * as authService from 'service/auth';
 
 const INITIALIZE = "INITIALIZE";
 const SIGN_IN = "SIGN_IN";
@@ -9,29 +8,30 @@ const SIGN_OUT = "SIGN_OUT";
 const SIGN_UP = "SIGN_UP";
 
 const INITIAL_STATE = {
-  isAuthenticated: true,
   user: null,
 };
 
 const JWTReducer = (state, action) => {
   switch (action.type) {
+    case INITIALIZE:
+      return {
+        ...state,
+        user: action.payload.user,
+      };
     case SIGN_IN:
       return {
         ...state,
-        isAuthenticated: true,
         user: action.payload.user,
       };
     case SIGN_OUT:
       return {
         ...state,
-        isAuthenticated: false,
         user: null,
       };
 
     case SIGN_UP:
       return {
         ...state,
-        isAuthenticated: true,
         user: action.payload.user,
       };
 
@@ -44,14 +44,38 @@ const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(JWTReducer, INITIAL_STATE);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Check 
+  useEffect(() => {
+    const loadUser = async _ => {
+      setIsLoading(true);
+      const user = await authService.myAccount();
+      console.log('loadUser: ', user)
+      if ( !! user ) {
+        dispatch({type: INITIALIZE, payload: {user}})
+      } else {
+        dispatch({type: INITIALIZE, payload: {user: null}})
+      }
+      setIsLoading(false);
+    }
+    loadUser();
+  }, []);
+
   return (
-    <AuthContext.Provider
-      value={{
-        ...state
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+    <>
+      {
+        isLoading ? 
+        (<div>TODO: loading</div>) : 
+        <AuthContext.Provider
+        value={{
+          ...state
+          }}
+        >
+          {children}
+        </AuthContext.Provider>
+      }
+    </>
   )
 }
 

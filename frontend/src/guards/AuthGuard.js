@@ -5,9 +5,9 @@ import useAuth from "hooks/useAuth";
 
 // For routes that can only be accessed by authenticated users
 function AuthGuard({ children }) {
-  const { isAuthenticated, user } = useAuth();
+  const { user } = useAuth();
 
-  if ( ! isAuthenticated ) {
+  if ( ! user ) {
     return <Navigate to="/auth/sign-in"/>;
   }
 
