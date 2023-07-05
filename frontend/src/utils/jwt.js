@@ -1,5 +1,4 @@
 import jwt_decode from "jwt-decode";
-// import { verify, sign } from "jsonwebtoken";
 import axios from "./axios";
 
 const isValidToken = (accessToken) => {
@@ -22,5 +21,4 @@ const setSession = (accessToken) => {
   }
 };
 
-// export { verify, sign, isValidToken, setSession };
-export { isValidToken, setSession };
+export { isValidToken,setSession };

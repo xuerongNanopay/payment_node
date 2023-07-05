@@ -1,12 +1,16 @@
 import axios from "axios";
 
-const axiosInstance = axios.create();
+axios.defaults.baseURL = 'http://localhost:3030/';
 
+const axiosInstance = axios.create();
+axiosInstance.defaults.timeout = 2500;
+
+//TODO: Interceptor for request?
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     Promise.reject(
-      (error.response && error.response.data) || "Something went wrong"
+      (error.response && error.response.data) || "Internal Error"
     )
   }
 );

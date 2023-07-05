@@ -9,19 +9,12 @@ const SIGN_OUT = "SIGN_OUT";
 const SIGN_UP = "SIGN_UP";
 
 const INITIAL_STATE = {
-  isAuthenticated: false,
-  isInitialized: false,
+  isAuthenticated: true,
   user: null,
 };
 
 const JWTReducer = (state, action) => {
   switch (action.type) {
-    case INITIALIZE:
-      return {
-        isAuthenticated: action.payload.isAuthenticated,
-        isInitialized: true,
-        user: action.payload.user,
-      };
     case SIGN_IN:
       return {
         ...state,
@@ -47,12 +40,18 @@ const JWTReducer = (state, action) => {
   }
 };
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(JWTReducer, INITIAL_STATE);
   return (
-    <></>
+    <AuthContext.Provider
+      value={{
+        ...state
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   )
 }
 

@@ -51,7 +51,7 @@ const routes = [
   },
   {
     path: "main",
-    element: <MainMenu />,
+    element: (<AuthGuard><MainMenu/></AuthGuard>),
     children: [
       { index: true, element: <DashboardMenu/> },
       { path: "contact", element: <ContactMenu/>},
