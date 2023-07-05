@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MaterialReactTable } from 'material-react-table';
 import { Box } from '@mui/material';
 import { Button } from 'react-bootstrap';
-import { useSendMoneyModal } from 'component/modals/SendMoneyModal';
+import { useSendMoneyModal } from 'components/modals/SendMoneyModal';
 
 import css from './TransactionMenu.module.css'
 

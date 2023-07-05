@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import nbp_logo from 'image/nbp_foree_remittance_logo.svg'
 import Button from 'react-bootstrap/Button'
-import DigitalInputField from 'component/ui/digital_input_field/DigitalInputField'
+import DigitalInputField from 'components/ui/digital_input_field/DigitalInputField'
 import css from './VerifyEmail.module.scss'
 
 import {

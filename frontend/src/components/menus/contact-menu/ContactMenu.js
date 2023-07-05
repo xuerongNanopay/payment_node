@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
 
 import css from './ContactMenu.module.css'
-import useAddContactModal from 'component/modals/AddContactModal';
+import useAddContactModal from 'components/modals/AddContactModal';
 
 const ContactMenu = _ => {
   const [ handleShow, Modal ] = useAddContactModal();

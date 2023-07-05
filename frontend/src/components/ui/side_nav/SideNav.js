@@ -8,7 +8,7 @@ import {
 import { BsBank } from "react-icons/bs";
 
 import { useState } from 'react'
-import { useSendMoneyModal } from 'component/modals/SendMoneyModal';
+import { useSendMoneyModal } from 'components/modals/SendMoneyModal';
 
 
 const MENU_DEMO = [

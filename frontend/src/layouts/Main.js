@@ -1,26 +1,28 @@
 import { useEffect, useState, useRef } from 'react'
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+
 // import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import css from './MainMenu.module.css'
+import css from './Main.module.css'
 
 import { BsBell } from "react-icons/bs";
 
-import SideNav from 'component/ui/side_nav/SideNav';
+import SideNav from 'components/ui/side_nav/SideNav';
 import nbp_logo from 'image/nbp_foree_remittance_logo.svg'
-import TransactionMenu from '../transaction-menu/TransactionMenu';
-import ContactMenu from '../contact-menu/ContactMenu';
-import NotificationMenu from '../notification-menu/NotificationMenu';
-import DashboardMenu from '../dashboard-menu/DashboardMenu';
-import AccountMenu from '../account-menu/AccountMenu';
-import ChangepasswdMenu from '../changepasswd-menu/ChangepasswdMenu';
-import TransactionDetail from '../transaction-menu/TransactionDetail';
+import TransactionMenu from 'components/menus/transaction-menu/TransactionMenu';
+import ContactMenu from 'components/menus/contact-menu/ContactMenu';
+import NotificationMenu from 'components/menus/notification-menu/NotificationMenu';
+import DashboardMenu from 'components/menus/dashboard-menu/DashboardMenu';
+import AccountMenu from 'components/menus/account-menu/AccountMenu';
+import ChangepasswdMenu from 'components/menus/changepasswd-menu/ChangepasswdMenu';
+import TransactionDetail from 'components/menus/transaction-menu/TransactionDetail';
 
 const MOBILE_SIZE = 997;
 
 //TODO: userContext to store user data.
-const MainMenu = () => {
+const Main = () => {
   const [ showNavSideBar, setShowNavSideBar ] = useState(false);
   const [ toggleNavSideBar, setToggleNavSiedBar] = useState(false);
   const [ nextNavSideBarMenu, setNextNavSideBarMenu ] = useState(false);
@@ -171,7 +173,8 @@ const MainMenu = () => {
           width: '100%',
           background: '#f0f0f0'
         }}>
-          <Routes>
+          <Outlet/>
+          {/* <Routes>
             <Route index element={<Navigate to="dashboard"/>}/>
             <Route path="transaction">
               <Route index element={<TransactionMenu />} />
@@ -183,7 +186,7 @@ const MainMenu = () => {
             <Route path="dashboard" element={<DashboardMenu/>}/>
             <Route path="account" element={<AccountMenu/>}/>
             <Route path="changepasswd" element={<ChangepasswdMenu/>}/>
-          </Routes>
+          </Routes> */}
         </main>
       </div>
     </div>
@@ -237,4 +240,4 @@ const CloseIcon = () => {
 }
 
 
-export default MainMenu
+export default Main
