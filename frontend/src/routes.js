@@ -16,6 +16,8 @@ import AccountMenu from 'pages/menus/account-menu/AccountMenu';
 import ChangepasswdMenu from 'pages/menus/changepasswd-menu/ChangepasswdMenu';
 import TransactionDetail from 'pages/menus/transaction-menu/TransactionDetail';
 
+import MainLayout from 'pages/menus/main-menu/Main';
+
 import AuthGuard from 'guards/AuthGuard';
 
 const routes = [
@@ -64,6 +66,13 @@ const routes = [
         { path: ":transactionId", element: <TransactionDetail/>},
         { path: "*", element: <TransactionDetail/>},
       ]}
+    ]
+  },
+  {
+    path: "test",
+    element: <MainLayout/ >,
+    children: [
+
     ]
   },
   {
