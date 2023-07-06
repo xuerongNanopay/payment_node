@@ -1,3 +1,4 @@
+//TODO: signIn, signUp, signOut implementation.
 import { createContext, useEffect, useReducer, useState } from "react";
 
 import * as authService from 'service/auth';

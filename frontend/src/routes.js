@@ -72,7 +72,8 @@ const routes = [
     path: "test",
     element: <MainLayout/ >,
     children: [
-
+      { path: "contact", element: <ContactMenu/>},
+      { path: "notification", element: <NotificationMenu/>},
     ]
   },
   {
