@@ -1,7 +1,7 @@
 // Persist Theme to localStorage. (Remember Theme)
 // This ThemeContext only response to pick different theme that defined in side contants.
 // The really style theme is MUITheme.
-import { useEffect, createContext } from 'react';
+import { useState, useEffect, createContext } from 'react';
 
 import { THEMES } from '../constants'
 
@@ -10,9 +10,26 @@ const INITIAL_STATE = {
   setTheme: (theme) => {}
 }
 
-// Create with INITIAL_STATE
+const ThemeContext = createContext(INITIAL_STATE);
 
+function ThemeProvider({ children }) {
+  const [theme, _setTheme] = useState(THEMES.theme);
 
-function ThemeProvider() {
-  //
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if ( !!storedTheme ) _setTheme(JSON.parse(storedTheme));
+  }, []);
+
+  const setTheme = (theme) => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+    _setTheme(theme);
+  };
+
+  return (
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
+
+export { ThemeProvider, ThemeContext };
