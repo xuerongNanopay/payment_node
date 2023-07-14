@@ -7,7 +7,7 @@ import Page500 from 'pages/auth/Page500';
 import VerifyEmail from 'pages/auth/VerifyEmail'
 import ForgetPassword from 'pages/auth/ForgetPassword'
 
-import MainMenu from 'layouts/MainOLD'
+import MainMenuOLD from 'layouts/MainOLD'
 import DashboardMenu from 'pages/menus/dashboard-menu/DashboardMenu';
 import TransactionMenu from 'pages/menus/transaction-menu/TransactionMenu';
 import ContactMenu from 'pages/menus/contact-menu/ContactMenu';
@@ -16,7 +16,7 @@ import AccountMenu from 'pages/menus/account-menu/AccountMenu';
 import ChangepasswdMenu from 'pages/menus/changepasswd-menu/ChangepasswdMenu';
 import TransactionDetail from 'pages/menus/transaction-menu/TransactionDetail';
 
-import MainLayout from 'pages/menus/main-menu/Main';
+import MainLayout from 'layouts/Main';
 
 import AuthGuard from 'guards/AuthGuard';
 
@@ -53,7 +53,7 @@ const routes = [
   },
   {
     path: "main",
-    element: (<AuthGuard><MainMenu/></AuthGuard>),
+    element: (<AuthGuard><MainMenuOLD/></AuthGuard>),
     children: [
       { index: true, element: <DashboardMenu/> },
       { path: "contact", element: <ContactMenu/>},
