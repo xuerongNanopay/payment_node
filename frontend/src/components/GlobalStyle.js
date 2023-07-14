@@ -9,7 +9,6 @@ const GlobalStyle = (props) => {
         body,
         #root {
           height: 100%;
-          color: red;
         }
 
         body {
