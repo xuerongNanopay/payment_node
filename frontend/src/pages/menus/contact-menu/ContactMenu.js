@@ -14,7 +14,6 @@ const ContactMenu = _ => {
             display: 'flex',
             justifyContent: 'space-between',
             alignContent: 'center',
-            marginTop: '1rem'
           }}
         >
           <h1>Contacts</h1>

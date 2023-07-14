@@ -13,6 +13,7 @@ import { AuthProvider } from 'contexts/JWTContext';
 const App = _ => {
   const content = useRoutes(routes);
   const { theme } = useTheme();
+
   return (
     <React.Fragment>
       <MUIThemeProvider theme={createTheme(theme)}>

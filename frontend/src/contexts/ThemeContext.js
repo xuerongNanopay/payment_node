@@ -6,14 +6,15 @@ import { useState, useEffect, createContext } from 'react';
 import { THEMES } from '../constants'
 
 const INITIAL_STATE = {
-  theme: THEMES.DEFAULT,
+  theme: THEMES.DARK,
   setTheme: (theme) => {}
 }
 
 const ThemeContext = createContext(INITIAL_STATE);
 
 function ThemeProvider({ children }) {
-  const [theme, _setTheme] = useState(THEMES.theme);
+  console.log(INITIAL_STATE.theme)
+  const [theme, _setTheme] = useState(INITIAL_STATE.theme);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");

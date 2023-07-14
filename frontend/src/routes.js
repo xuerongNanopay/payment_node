@@ -16,7 +16,7 @@ import AccountMenu from 'pages/menus/account-menu/AccountMenu';
 import ChangepasswdMenu from 'pages/menus/changepasswd-menu/ChangepasswdMenu';
 import TransactionDetail from 'pages/menus/transaction-menu/TransactionDetail';
 
-import MainLayout from 'layouts/Main';
+import MainLayout from './layouts/Main';
 
 import AuthGuard from 'guards/AuthGuard';
 

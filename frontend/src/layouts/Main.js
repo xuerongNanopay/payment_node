@@ -18,8 +18,9 @@ const MainLayout = ({children}) => {
   return (
     <Root>
       <CssBaseline/>
-      <GlobalStyle/>
-      <Outlet/>
+      {/* <GlobalStyle/> */}
+      <h1>aaaa</h1>
+      {/* <Outlet/> */}
     </Root>
   )
 }
