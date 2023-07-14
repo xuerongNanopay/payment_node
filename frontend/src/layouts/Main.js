@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import styled from "@emotion/styled";
 import { Box, CssBaseline, Paper as MuiPaper } from "@mui/material";
+import { spacing } from "@mui/system";
 
 import GlobalStyle from "../components/GlobalStyle";
 
@@ -14,12 +15,30 @@ const Root = styled.div`
   border: 1px solid red;
 `;
 
+const Drawer = styled.div`
+  border: 1px solid blue;
+  ${(props) => props.theme.breakpoints.up("md")} {
+    width: ${drawerWidth}px;
+    flex-shrink: 0;
+  }
+`;
+
+const AppContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  border: 1px solid green;
+`;
+
+
 const MainLayout = ({children}) => {
   return (
     <Root>
       <CssBaseline/>
       {/* <GlobalStyle/> */}
-      <h1>aaaa</h1>
+      <Drawer></Drawer>
+
       {/* <Outlet/> */}
     </Root>
   )
