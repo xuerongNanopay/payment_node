@@ -3,30 +3,22 @@ import {
   useRoutes
 } from 'react-router-dom'
 
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
+import createTheme from 'theme';
 
 import routes from "./routes";
 import { AuthProvider } from 'contexts/JWTContext';
-
-//TODO: move to theme context;
-const THEME = {
-  colors: {
-    header: '#ebfbff',
-    body: '#fff',
-    footer: '#003333'
-  }
-}
 
 const App = _ => {
   const content = useRoutes(routes);
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={THEME}>
+      <MUIThemeProvider theme={THEME}>
         <AuthProvider>
           {content}
         </AuthProvider>
-      </ThemeProvider>
+      </MUIThemeProvider>
     </React.Fragment>
   )
 }
