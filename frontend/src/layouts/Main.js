@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import styled from "@emotion/styled";
 import { Box, CssBaseline, Paper as MuiPaper } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 import { spacing } from "@mui/system";
 
 import GlobalStyle from "../components/GlobalStyle";
@@ -32,7 +33,7 @@ const AppContent = styled.div`
 `;
 
 
-const MainLayout = ({children}) => {
+const MainLayout = () => {
   return (
     <Root>
       <CssBaseline/>
