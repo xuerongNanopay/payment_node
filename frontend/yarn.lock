@@ -1767,20 +1767,6 @@
   "resolved" "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   "version" "2.0.4"
 
-"@mui/base@5.0.0-beta.4":
-  "integrity" "sha512-ejhtqYJpjDgHGEljjMBQWZ22yEK0OzIXNa7toJmmXsP4TT3W7xVy8bTJ0TniPDf+JNjrsgfgiFTDGdlEhV1E+g=="
-  "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.4.tgz"
-  "version" "5.0.0-beta.4"
-  dependencies:
-    "@babel/runtime" "^7.21.0"
-    "@emotion/is-prop-valid" "^1.2.1"
-    "@mui/types" "^7.2.4"
-    "@mui/utils" "^5.13.1"
-    "@popperjs/core" "^2.11.8"
-    "clsx" "^1.2.1"
-    "prop-types" "^15.8.1"
-    "react-is" "^18.2.0"
-
 "@mui/base@5.0.0-beta.7":
   "integrity" "sha512-Pjbwm6gjiS96kOMF7E5fjEJsenc0tZBesrLQ4rrdi3eT/c/yhSWnPbCUkHSz8bnS0l3/VQ8bA+oERSGSV2PK6A=="
   "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.7.tgz"
@@ -1795,17 +1781,17 @@
     "prop-types" "^15.8.1"
     "react-is" "^18.2.0"
 
-"@mui/core-downloads-tracker@^5.13.4":
-  "integrity" "sha512-yFrMWcrlI0TqRN5jpb6Ma9iI7sGTHpytdzzL33oskFHNQ8UgrtPas33Y1K7sWAMwCrr1qbWDrOHLAQG4tAzuSw=="
-  "resolved" "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.13.4.tgz"
-  "version" "5.13.4"
+"@mui/core-downloads-tracker@^5.14.0":
+  "integrity" "sha512-SYBOVCatVDUf/lbrLGah09bHhX5WfUXg7kSskfLILr6SvKRni0NLp0aonxQ0SMALVVK3Qwa6cW4CdWuwS0gC1w=="
+  "resolved" "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.0.tgz"
+  "version" "5.14.0"
 
-"@mui/icons-material@^5.11.16", "@mui/icons-material@>=5":
-  "integrity" "sha512-oKkx9z9Kwg40NtcIajF9uOXhxiyTZrrm9nmIJ4UjkU2IdHpd4QVLbCc/5hZN/y0C6qzi2Zlxyr9TGddQx2vx2A=="
-  "resolved" "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.11.16.tgz"
-  "version" "5.11.16"
+"@mui/icons-material@^5.14.0", "@mui/icons-material@>=5":
+  "integrity" "sha512-z7lYNteDi1GMkF9JP/m2RWuCYK1M/FlaeBSUK7/IhIYzIXNhAVjfD8jRq5vFBV31qkEi2aGBS2z5SfLXwH6U0A=="
+  "resolved" "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.0.tgz"
+  "version" "5.14.0"
   dependencies:
-    "@babel/runtime" "^7.21.0"
+    "@babel/runtime" "^7.22.5"
 
 "@mui/lab@^5.0.0-alpha.136":
   "integrity" "sha512-ai6LspCkyKRD8rL2HEtaTPBbeYkARNNKvSbjOLVJtro9bIFpZ0noH21Pp7t50Y2eFemuYeC+D5Tto3OvGKrhnQ=="
@@ -1821,17 +1807,17 @@
     "prop-types" "^15.8.1"
     "react-is" "^18.2.0"
 
-"@mui/material@^5.0.0", "@mui/material@^5.13.5", "@mui/material@>=5":
-  "integrity" "sha512-eMay+Ue1OYXOFMQA5Aau7qbAa/kWHLAyi0McsbPTWssCbGehqkF6CIdPsfVGw6tlO+xPee1hUitphHJNL3xpOQ=="
-  "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.13.5.tgz"
-  "version" "5.13.5"
+"@mui/material@^5.0.0", "@mui/material@^5.14.0", "@mui/material@>=5":
+  "integrity" "sha512-HP7CP71NhMkui2HUIEKl2/JfuHMuoarSUWAKlNw6s17bl/Num9rN61EM6uUzc2A2zHjj/00A66GnvDnmixEJEw=="
+  "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.14.0.tgz"
+  "version" "5.14.0"
   dependencies:
-    "@babel/runtime" "^7.21.0"
-    "@mui/base" "5.0.0-beta.4"
-    "@mui/core-downloads-tracker" "^5.13.4"
-    "@mui/system" "^5.13.5"
+    "@babel/runtime" "^7.22.5"
+    "@mui/base" "5.0.0-beta.7"
+    "@mui/core-downloads-tracker" "^5.14.0"
+    "@mui/system" "^5.14.0"
     "@mui/types" "^7.2.4"
-    "@mui/utils" "^5.13.1"
+    "@mui/utils" "^5.13.7"
     "@types/react-transition-group" "^4.4.6"
     "clsx" "^1.2.1"
     "csstype" "^3.1.2"
@@ -1858,7 +1844,7 @@
     "csstype" "^3.1.2"
     "prop-types" "^15.8.1"
 
-"@mui/system@^5.13.5", "@mui/system@^5.14.0":
+"@mui/system@^5.14.0":
   "integrity" "sha512-0HZGkX8miJbiNw+rjlZ9l0Cfkz1bSqfSHQH0EH9J+nx0aAm5cBleg9piOlLdCNIWGgecCqsw4x62erGrGjjcJg=="
   "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.14.0.tgz"
   "version" "5.14.0"
@@ -1877,7 +1863,7 @@
   "resolved" "https://registry.npmjs.org/@mui/types/-/types-7.2.4.tgz"
   "version" "7.2.4"
 
-"@mui/utils@^5.13.1", "@mui/utils@^5.13.7":
+"@mui/utils@^5.13.7":
   "integrity" "sha512-/3BLptG/q0u36eYED7Nhf4fKXmcKb6LjjT7ZMwhZIZSdSxVqDqSTmATW3a56n3KEPQUXCU9TpxAfCBQhs6brVA=="
   "resolved" "https://registry.npmjs.org/@mui/utils/-/utils-5.13.7.tgz"
   "version" "5.13.7"
