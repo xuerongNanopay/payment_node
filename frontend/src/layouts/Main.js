@@ -55,7 +55,12 @@ const MainLayout = () => {
       <CssBaseline/>
       {/* <GlobalStyle/> */}
       <Drawer>
-        aaa
+        {/* <Box sx={{ display: { xs: "block", lg: "none" } }}>
+          VVVVV
+        </Box> */}
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
+          FFFFF
+        </Box>
       </Drawer>
 
       {/* <Outlet/> */}
