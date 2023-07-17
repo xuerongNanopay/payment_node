@@ -60,7 +60,9 @@ const MainLayout = () => {
           VVVVV
         </Box> */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
-          <Sidebar/>
+          <Sidebar 
+            PaperProps={{ style: { width: drawerWidth }} }
+          />
         </Box>
       </Drawer>
 
