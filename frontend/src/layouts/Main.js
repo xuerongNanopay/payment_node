@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { Box, CssBaseline, Paper as MuiPaper } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import { spacing } from "@mui/system";
+import Sidebar from "components/sidebar/Sidebar";
 
 import GlobalStyle from "../components/GlobalStyle";
 
@@ -59,7 +60,7 @@ const MainLayout = () => {
           VVVVV
         </Box> */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
-          FFFFF
+          <Sidebar/>
         </Box>
       </Drawer>
 
