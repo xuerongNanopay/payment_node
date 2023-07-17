@@ -6,7 +6,7 @@ import { useState, useEffect, createContext } from 'react';
 import { THEMES } from '../constants'
 
 const INITIAL_STATE = {
-  theme: THEMES.DARK,
+  theme: THEMES.DEFAULT,
   setTheme: (theme) => {}
 }
 

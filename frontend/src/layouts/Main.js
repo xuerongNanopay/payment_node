@@ -32,13 +32,31 @@ const AppContent = styled.div`
   border: 1px solid green;
 `;
 
+const Paper = styled(MuiPaper)(spacing);
+
+const MainContent = styled(Paper)`
+  flex: 1;
+  background: ${(props) => props.theme.palette.background.default};
+
+  // For IE
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    flex: none;
+  }
+
+  .MuiPaper-root .MuiPaper-root {
+    box-shadow: none;
+  }
+`;
+
 
 const MainLayout = () => {
   return (
     <Root>
       <CssBaseline/>
       {/* <GlobalStyle/> */}
-      <Drawer></Drawer>
+      <Drawer>
+        aaa
+      </Drawer>
 
       {/* <Outlet/> */}
     </Root>
