@@ -1,7 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 import {
   Box,
   SvgIcon,
   Drawer as MuiDrawer,
+  ListItemButton
 } from '@mui/material';
 
 import styled from '@emotion/styled';
@@ -16,6 +19,28 @@ const Drawer = styled(MuiDrawer)`
   // }
 `;
 
+const Brand = styled(ListItemButton)`
+  font-size: ${(props) => props.theme.typography.h5.fontSize};
+  font-weight: ${(props) => props.theme.typography.fontWeightMedium};
+  color: ${(props) => props.theme.sidebar.header.color};
+  background-color: ${(props) => props.theme.sidebar.header.background};
+  font-family: ${(props) => props.theme.typography.fontFamily};
+  min-height: 56px;
+  padding-left: ${(props) => props.theme.spacing(6)};
+  padding-right: ${(props) => props.theme.spacing(6)};
+  justify-content: center;
+  cursor: pointer;
+  flex-grow: 0;
+
+  ${(props) => props.theme.breakpoints.up("sm")} {
+    min-height: 64px;
+  }
+
+  &:hover {
+    background-color: ${(props) => props.theme.sidebar.header.background};
+  }
+`;
+
 const BrandIcon = styled(Logo)`
   // margin-right: ${(props) => props.theme.spacing(2)};
   // color: ${(props) => props.theme.sidebar.header.brand.color};
@@ -27,10 +52,9 @@ const BrandIcon = styled(Logo)`
 const Sidebar = ({...rest}) => {
   return (
     <Drawer variant="permanent" {...rest}>
-      <BrandIcon/>
-      <Box ml={1}>
-          Mira 
-      </Box>
+      <Brand component={NavLink} to="/">
+        <BrandIcon/>
+      </Brand>
     </Drawer>
   )
 }
