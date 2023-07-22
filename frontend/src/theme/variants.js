@@ -70,6 +70,20 @@ const defaultVariant = {
   },
 };
 
+const nbpVariant = merge(defaultVariant, {
+  name: THEMES.NBP,
+  sidebar: {
+    header: {
+      height: "57px",
+      color: grey[200],
+      background: "#FFF",
+      brand: {
+        color: customBlue[500],
+      },
+    },
+  }
+})
+
 const darkVariant = merge(defaultVariant, {
   name: THEMES.DARK,
   palette: {
@@ -253,6 +267,7 @@ const variants = [
   blueVariant,
   greenVariant,
   indigoVariant,
+  nbpVariant
 ];
 
 export default variants;

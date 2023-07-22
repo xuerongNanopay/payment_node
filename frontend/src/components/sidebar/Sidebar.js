@@ -25,7 +25,7 @@ const Brand = styled(ListItemButton)`
   color: ${(props) => props.theme.sidebar.header.color};
   background-color: ${(props) => props.theme.sidebar.header.background};
   font-family: ${(props) => props.theme.typography.fontFamily};
-  min-height: 56px;
+  height: ${(props) => props.theme.sidebar.header.height};
   padding-left: ${(props) => props.theme.spacing(6)};
   padding-right: ${(props) => props.theme.spacing(6)};
   justify-content: center;
@@ -33,7 +33,8 @@ const Brand = styled(ListItemButton)`
   flex-grow: 0;
 
   ${(props) => props.theme.breakpoints.up("sm")} {
-    min-height: 64px;
+    // min-height: 64px;
+    height: ${(props) => props.theme.sidebar.header.height};
   }
 
   &:hover {
@@ -49,12 +50,14 @@ const BrandIcon = styled(Logo)`
   height: 64px;
 `;
 
-const Sidebar = ({...rest}) => {
+const Sidebar = ({ items, showFooter=true, ...rest}) => {
   return (
     <Drawer variant="permanent" {...rest}>
       <Brand component={NavLink} to="/">
         <BrandIcon/>
       </Brand>
+      {/* NavSideBar */}
+      {/* { !!showFooter && <Footer/>} */}
     </Drawer>
   )
 }

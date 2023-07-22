@@ -4,4 +4,5 @@ export const THEMES = {
   LIGHT: "LIGHT",
   BLUE: "BLUE",
   GREEN: "GREEN",
+  NBP: "NBP"
 };
