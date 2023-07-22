@@ -45,7 +45,7 @@ const Brand = styled(ListItemButton)`
 const BrandIcon = styled(Logo)`
   // margin-right: ${(props) => props.theme.spacing(2)};
   // color: ${(props) => props.theme.sidebar.header.brand.color};
-  // fill: ${(props) => props.theme.sidebar.header.brand.color};
+  fill: ${(props) => props.theme.sidebar.header.brand.color};
   width: 100px;
   height: 30px;
 `;
