@@ -47,7 +47,7 @@ const BrandIcon = styled(Logo)`
   // color: ${(props) => props.theme.sidebar.header.brand.color};
   // fill: ${(props) => props.theme.sidebar.header.brand.color};
   width: 100px;
-  height: 64px;
+  height: 30px;
 `;
 
 const Sidebar = ({ items, showFooter=true, ...rest}) => {
