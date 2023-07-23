@@ -44,7 +44,6 @@ const Button = styled(MuiButton)(spacing);
 export default function SignInComponent() {
   const navigate = useNavigate();
 
-  console.log(spacing);
   return (
     <SignInFormPaper elevation={0}>
       <header>
