@@ -1,6 +1,6 @@
-import AuthLayout from "./layouts/authLayout";
+import AuthLayout from "layouts/authLayout";
 
-import SignInPage from "./pages/auth/SignInPage";
+import SignInPage from "pages/auth/SignInPage";
 
 const routes = [
   {
