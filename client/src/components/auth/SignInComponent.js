@@ -1,11 +1,13 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { styled } from '@mui/material/styles';
 import { 
   Typography, 
   Paper, 
-  Button,
+  Button as MuiButton,
+  Box,
   TextField as MuiTextField,
 } from "@mui/material"
 import { spacing } from "@mui/system";
@@ -14,9 +16,10 @@ import { Formik } from 'formik';
 import * as Yup from "yup";
 
 import authService from 'services/authService'
+import VisiablePasswordField from "components/form/VisiablePasswordField";
 
 const SignInFormPaper = styled(Paper)`
-  border: 1px solid red;
+  // border: 1px solid red;
 `
 
 const SignInSchema = {
@@ -35,6 +38,8 @@ const SignInValidationSchema = Yup.object().shape({
 
 const TextField = styled(MuiTextField)(spacing);
 // const TextField = styled(MuiTextField)``;
+
+const Button = styled(MuiButton)(spacing);
 
 export default function SignInComponent() {
   const navigate = useNavigate();
@@ -73,7 +78,10 @@ export default function SignInComponent() {
             values,
           }) => {
             return (
-              <form noValidate onSubmit={handleSubmit}>
+              <form 
+                noValidate 
+                onSubmit={handleSubmit}
+              >
                 <TextField
                   type="email"
                   name="email"
@@ -104,17 +112,48 @@ export default function SignInComponent() {
                   variant="contained"
                   color="primary"
                   disabled={isSubmitting}
+                  mt={3}
+                  mb={1}
                 >
                   Sign in
                 </Button>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'end',
+                  }}
+                >
+                  <Button
+                    component={Link}
+                    to="/auth/reset-password"
+                    color="primary"
+                  >
+                    Forgot password
+                  </Button>
+                </Box>
+
               </form>
             )
           }
         }
       </Formik>
       <footer>
-        <Typography variant="body1" component="span">Not a User Yet?</Typography>
-        <Button>Create an Account</Button>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Typography variant="body1" component="span">Not a User Yet?</Typography>
+          <Button
+            component={Link}
+            to="/auth/reset-password"
+            color="primary"
+          >
+            Create an Account
+          </Button>
+        </Box>
       </footer>
     </SignInFormPaper>
   )

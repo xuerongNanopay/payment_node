@@ -20,20 +20,30 @@ const customBlue = {
 const defaultVariant = {
   name: THEMES.DEFAULT,
   palette: {
-    mode: 'light',
     primary: {
-      main: customBlue[700],
+      main: "#1A6B54",
       contrastText: "#FFF",
     },
     secondary: {
-      main: customBlue[500],
+      main: green[500],
       contrastText: "#FFF",
     },
+  }
+  // palette: {
+  //   mode: 'light',
+  //   primary: {
+  //     main: customBlue[700],
+  //     contrastText: "#FFF",
+  //   },
+  //   secondary: {
+  //     main: customBlue[500],
+  //     contrastText: "#FFF",
+  //   },
     // background: {
     //   default: "#F7F9FC",
     //   paper: "#FFF",
     // },
-  }
+  // }
 };
 
 const nbpVariant = merge(defaultVariant, {
