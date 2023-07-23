@@ -5,7 +5,7 @@ import typography from "./typography";
 import breakpoints from "./breakpoints";
 
 const createTheme = (name) => {
-  const themeConfig = variants.find((variant) => variant.name === name);
+  let themeConfig = variants.find((variant) => variant.name === name);
 
   if ( !themeConfig ) {
     console.warn(new Error(`The theme ${name} is not valid`));
@@ -22,3 +22,5 @@ const createTheme = (name) => {
     }
   )
 }
+
+export default createTheme;

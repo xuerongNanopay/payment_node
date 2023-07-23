@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
 
-import { THEMES } from '../constant';
+import { THEMES } from '../constants';
 
 const INITIAL_STATE = {
   theme: THEMES.DEFAULT,
