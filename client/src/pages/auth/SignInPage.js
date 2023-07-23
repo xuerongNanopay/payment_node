@@ -7,18 +7,9 @@ import { styled } from '@mui/material/styles';
 import nbpBackGroundImage from 'images/nbp-backgroud.svg'
 import {ReactComponent as nbpLogo } from 'images/nbp_foree_remittance_logo.svg'
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+import SignInComponent from 'components/auth/SignInComponent';
 
-const Brand = styled(Paper).attrs({
-  square: true,
-  elevation: 0
-})`
+const BrandPaper = styled(Paper)`
   display: grid;
   place-items: center;
   height: 100vh;
@@ -36,10 +27,7 @@ const BrandLogo = styled(nbpLogo)`
     height: 50%;
   }
 `
-const AuthFormContainer = styled(Paper).attrs({
-  square: true,
-  elevation: 0
-})`
+const AuthFormPaper = styled(Paper)`
   display: grid;
   place-items: center;
   height: 100vh;
@@ -53,14 +41,14 @@ export default function SignInPage() {
   return (
     <Grid container>
       <Grid xs={12} sm={6}>
-        <Brand>
+        <BrandPaper elevation={0} square>
           <BrandLogo />
-        </Brand>
+        </BrandPaper>
       </Grid>
       <Grid xs={12} sm={6}>
-        <AuthFormContainer>
-          <h2>aaa</h2>
-        </AuthFormContainer>
+        <AuthFormPaper elevation={0} square>
+          <SignInComponent />
+        </AuthFormPaper>
       </Grid>
     </Grid>
   )
