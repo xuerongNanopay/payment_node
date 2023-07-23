@@ -15,14 +15,17 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Brand = styled(Paper)`
+const Brand = styled(Paper).attrs({
+  square: true,
+  elevation: 0
+})`
   display: grid;
   place-items: center;
   height: 100vh;
   background-image: url(${nbpBackGroundImage});
 
   ${(props) => props.theme.breakpoints.down("sm")} {
-    height: 15vh;
+    height: 20vh;
   }
 `
 const BrandLogo = styled(nbpLogo)`
@@ -33,17 +36,31 @@ const BrandLogo = styled(nbpLogo)`
     height: 50%;
   }
 `
+const AuthFormContainer = styled(Paper).attrs({
+  square: true,
+  elevation: 0
+})`
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  ${(props) => props.theme.breakpoints.down("sm")} {
+    height: 80vh;
+  }
+`
 
 export default function SignInPage() {
   return (
     <Grid container>
       <Grid xs={12} sm={6}>
-        <Brand square elevation={0}>
+        <Brand>
           <BrandLogo />
         </Brand>
       </Grid>
       <Grid xs={12} sm={6}>
-        <Item>Content</Item>
+        <AuthFormContainer>
+          <h2>aaa</h2>
+        </AuthFormContainer>
       </Grid>
     </Grid>
   )
