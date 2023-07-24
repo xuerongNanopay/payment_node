@@ -1,6 +1,7 @@
 import AuthLayout from "layouts/authLayout";
 
 import SignInPage from "pages/auth/SignInPage";
+import SignUpPage from "pages/auth/SignUpPage"
 
 const routes = [
   {
@@ -10,6 +11,10 @@ const routes = [
       {
         path: "sign-in",
         element: <SignInPage />
+      },
+      {
+        path: "sign-up",
+        element: <SignUpPage />
       }
     ]
   }

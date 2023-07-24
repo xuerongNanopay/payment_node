@@ -3,7 +3,6 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 
-// import nbpBackGroundImage from ''
 import nbpBackGroundImage from 'images/nbp-backgroud.svg'
 import {ReactComponent as nbpLogo } from 'images/nbp_foree_remittance_logo.svg'
 
