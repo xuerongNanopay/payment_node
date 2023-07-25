@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import nbpBackGroundImage from 'images/nbp-backgroud.svg'
 import {ReactComponent as nbpLogo } from 'images/nbp_foree_remittance_logo.svg'
 
-import SignInComponent from 'components/auth/SignInComponent';
+import ForgetPasswordComponent from 'components/auth/ForgetPasswordComponent';
 
 const BrandPaper = styled(Paper)`
   display: grid;
