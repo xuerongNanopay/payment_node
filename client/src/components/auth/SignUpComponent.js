@@ -36,7 +36,7 @@ const SignInValidationSchema = Yup.object().shape({
   .max(255)
   .required("Email is required"),
   username: Yup.string().max(255).required("Username is required"),
-  password: Yup.string().max(255).required("Password is required"),
+  password: Yup.string().min(10).max(255).required("Password is required"),
   confirmPassword: Yup.string().required().oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
