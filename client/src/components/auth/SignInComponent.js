@@ -16,7 +16,6 @@ import { Formik } from 'formik';
 import * as Yup from "yup";
 
 import authService from 'services/authService'
-import VisiablePasswordField from "components/form/VisiablePasswordField";
 
 const SignInFormPaper = styled(Paper)`
   // border: 1px solid red;
@@ -33,7 +32,7 @@ const SignInValidationSchema = Yup.object().shape({
   .email("Must be a valid email")
   .max(255)
   .required("Email is required"),
-  password: Yup.string().max(255).required("Password is required"),
+  password: Yup.string().max(255).required("Password is required")
 });
 
 const TextField = styled(MuiTextField)(spacing);
@@ -54,8 +53,7 @@ export default function SignInComponent() {
         validationSchema={SignInValidationSchema}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            console.log('aa')
-            await authService.signIn(values.email, values.password);
+            await authService.signIn(values);
             // navigate("/main");
           } catch ( error ) {
             const message = error.message || "Something went wrong";
@@ -147,7 +145,7 @@ export default function SignInComponent() {
           <Typography variant="body1" component="span">Not a User Yet?</Typography>
           <Button
             component={Link}
-            to="/auth/reset-password"
+            to="/auth/sign-up"
             color="primary"
           >
             Create an Account

@@ -6,6 +6,8 @@ import { styled } from '@mui/material/styles';
 import nbpBackGroundImage from 'images/nbp-backgroud.svg'
 import {ReactComponent as nbpLogo } from 'images/nbp_foree_remittance_logo.svg'
 
+import SignUpCompoent from 'components/auth/SignUpComponent';
+
 
 const BrandPaper = styled(Paper)`
   display: grid;
@@ -47,7 +49,7 @@ export default function SignUpPage() {
       </Grid>
       <Grid xs={12} sm={8} md={5} lg={4}>
         <AuthFormPaper elevation={0} square>
-          {/* <SignInComponent /> */}
+          <SignUpCompoent />
         </AuthFormPaper>
       </Grid>
     </Grid>
